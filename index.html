@@ -93,7 +93,7 @@
   .chev{transition:transform .3s; opacity:.5; margin-left:8px}
   .day-card.open .chev{transform:rotate(90deg)}
   .day-body{max-height:0; overflow:hidden; transition:max-height .4s ease; padding:0 18px}
-  .day-card.open .day-body{max-height:800px; padding-bottom:18px}
+  .day-card.open .day-body{max-height:1600px; padding-bottom:18px}
   .day-body p{margin-bottom:8px}
   .day-body ul{margin:6px 0 6px 22px}
   .day-body li{margin-bottom:4px}
@@ -139,6 +139,20 @@
   /* games list */
   .game{background:var(--sky); border-radius:14px; padding:12px 16px; margin-bottom:10px}
   .game b{color:var(--deep)}
+  .fun-btn{color:#fff; border:none; padding:12px 18px; font:inherit; font-weight:bold; font-size:.98rem; border-radius:30px; cursor:pointer; box-shadow:var(--shadow)}
+
+  /* ---------- MOBILE ---------- */
+  @media(max-width:640px){
+    nav{flex-wrap:nowrap; overflow-x:auto; justify-content:flex-start; padding:10px 12px; -webkit-overflow-scrolling:touch; scrollbar-width:none}
+    nav::-webkit-scrollbar{display:none}
+    .tab-btn{flex-shrink:0; font-size:.85rem; padding:9px 14px}
+    #countdown{margin:-40px 12px 0; gap:8px; padding:14px}
+    .cd-box{min-width:68px; padding:10px 12px; flex:1}
+    .cd-num{font-size:1.6rem}
+    .day-head{gap:10px; padding:14px}
+    .day-tag{font-size:.62rem; padding:3px 8px}
+    .card{padding:16px}
+  }
 
   footer{text-align:center; padding:30px 16px; opacity:.6; font-size:.85rem}
   .emoji-rain{position:fixed; top:-40px; font-size:1.6rem; pointer-events:none; z-index:999; animation:fall linear forwards}
@@ -224,26 +238,8 @@
 
   <div class="day-card bude">
     <div class="day-head">
-      <span class="day-emoji">🌿</span>
-      <div><div class="day-date">Friday</div><div class="day-title">Eden Project</div></div>
-      <span class="day-tag">Big day out</span><span class="chev">▶</span>
-    </div>
-    <div class="day-body">
-      <p>~50 min drive. Giant biomes, jungle, play areas and lots to spot. A full day — go early!</p>
-      <ul>
-        <li>🌴 Rainforest Biome (warm — dress in layers you can peel off)</li>
-        <li>🛝 Outdoor play &amp; the "invisible worlds" zone</li>
-        <li>🎟️ Book tickets online in advance — they're cheaper &amp; valid all year</li>
-      </ul>
-      <div class="kid-tip"><b>Tip:</b> The 3 yr old may flag by mid-afternoon — bring the buggy/carrier. There's a land train if legs get tired.</div>
-      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/Bude/Eden+Project">🧭 Bude → Eden Project</a>
-    </div>
-  </div>
-
-  <div class="day-card bude">
-    <div class="day-head">
       <span class="day-emoji">⛵</span>
-      <div><div class="day-date">Saturday</div><div class="day-title">Padstow &amp; (maybe) a Boat Trip</div></div>
+      <div><div class="day-date">Friday</div><div class="day-title">Padstow &amp; (maybe) a Boat Trip</div></div>
       <span class="day-tag">Harbour day</span><span class="chev">▶</span>
     </div>
     <div class="day-body">
@@ -268,12 +264,30 @@
   <div class="day-card bude">
     <div class="day-head">
       <span class="day-emoji">😌</span>
-      <div><div class="day-date">Sunday</div><div class="day-title">Chill Day</div></div>
+      <div><div class="day-date">Saturday</div><div class="day-title">Chill Day</div></div>
       <span class="day-tag">Slow morning</span><span class="chev">▶</span>
     </div>
     <div class="day-body">
       <p>Recharge! PJs, late breakfast, local park or a short beach pop-out. Laundry + restock snacks.</p>
       <div class="kid-tip"><b>Tip:</b> Build in chill days like this — toddlers do <i>so</i> much better with a slower pace between big outings.</div>
+    </div>
+  </div>
+
+  <div class="day-card bude">
+    <div class="day-head">
+      <span class="day-emoji">🌿</span>
+      <div><div class="day-date">Sunday</div><div class="day-title">Eden Project</div></div>
+      <span class="day-tag">Big day out</span><span class="chev">▶</span>
+    </div>
+    <div class="day-body">
+      <p>~50 min drive. Giant biomes, jungle, play areas and lots to spot. A full day — go early!</p>
+      <ul>
+        <li>🌴 Rainforest Biome (warm — dress in layers you can peel off)</li>
+        <li>🛝 Outdoor play &amp; the "invisible worlds" zone</li>
+        <li>🎟️ Book tickets online in advance — they're cheaper &amp; valid all year</li>
+      </ul>
+      <div class="kid-tip"><b>Tip:</b> The 3 yr old may flag by mid-afternoon — bring the buggy/carrier. There's a land train if legs get tired.</div>
+      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/Bude/Eden+Project">🧭 Bude → Eden Project</a>
     </div>
   </div>
 
@@ -421,6 +435,16 @@
     <button onclick="randomGame()" style="background:var(--coral); color:#fff; border:none; padding:14px 26px; font:inherit; font-weight:bold; font-size:1.05rem; border-radius:30px; cursor:pointer; box-shadow:var(--shadow)">🎲 Surprise us!</button>
     <p id="gameOut" style="margin-top:16px; font-size:1.15rem; font-weight:bold; color:var(--deep); min-height:28px"></p>
   </div>
+  <div class="card" style="text-align:center">
+    <div class="sub-h" style="text-align:left">📣 Game machines <span class="pill">parent reads out</span></div>
+    <p style="font-size:.95rem; margin-bottom:12px">Phone stays up front — tap a button, then read it to the back seats! 📱➡️🗣️</p>
+    <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap">
+      <button class="fun-btn" style="background:var(--grape)" onclick="wouldYouRather()">🤔 Would you rather…</button>
+      <button class="fun-btn" style="background:var(--leaf)" onclick="storyStarter()">📖 Story starter</button>
+      <button class="fun-btn" style="background:var(--coral)" onclick="wiggleBreak()">🤸 Wiggle break</button>
+    </div>
+    <p id="machineOut" style="margin-top:16px; font-size:1.1rem; font-weight:bold; color:var(--deep); min-height:28px"></p>
+  </div>
   <div class="card">
     <div class="sub-h">🎮 Toddler-friendly games</div>
     <div class="game"><b>I Spy (colours)</b> — for the 3 yr old, use colours not letters: "I spy something… green!" 🟢</div>
@@ -429,6 +453,12 @@
     <div class="game"><b>Sticker books &amp; magnetic toys</b> — mess-free travel activities 📒</div>
     <div class="game"><b>Audiobooks &amp; sing-alongs</b> — Julia Donaldson stories are car gold 🎵</div>
     <div class="game"><b>Snack countdown</b> — "a treat at the next services!" works wonders 🍪</div>
+    <div class="game"><b>Guess the animal</b> — give 3 clues: "I'm big, I'm grey, I have a long trunk…" 🐘</div>
+    <div class="game"><b>Copy the clap</b> — clap a little rhythm, the kids echo it back. Get sillier each round 👏</div>
+    <div class="game"><b>Colour hunt</b> — pick a colour, first to spot 5 things that colour out the window 🔴</div>
+    <div class="game"><b>Loud lion, quiet mouse</b> — sing a verse ROARING loud, then whisper-quiet 🦁🐭</div>
+    <div class="game"><b>Magic word</b> — pick a silly word ("sausages!") and everyone shouts it when you pass a caravan 🌭</div>
+    <div class="game"><b>Teddy's questions</b> — a teddy "whispers" silly questions to the parent to ask the kids: "have you ever seen a purple cow?" 🧸</div>
   </div>
 </section>
 
@@ -545,9 +575,9 @@ const dailyCommon=["Suncream on everyone ☀️","Hats & sunglasses","Water bott
 const days=[
   {k:"wed1",label:"Wed · Travel",extra:["Car loaded the night before","Breakfast/coffee for 6am off 🚗","Halfway stop chosen","Check-in details to hand (2:30pm)"]},
   {k:"thu1",label:"Thu · Beach",extra:["Beach kit & towels","Bucket, spade & crabbing line","Windbreak"]},
-  {k:"fri1",label:"Fri · Eden",extra:["Eden tickets booked","Layers (rainforest is warm!)","Picnic or lunch money"]},
-  {k:"sat1",label:"Sat · Padstow",extra:["Crabbing line & bucket","Boat trip booked? Check times","Cash for fish & chips"]},
-  {k:"sun1",label:"Sun · Chill",extra:["Laundry on","Restock snacks","Plan next-day outing"]},
+  {k:"fri1",label:"Fri · Padstow",extra:["Crabbing line & bucket","Boat trip booked? Check times","Cash for fish & chips"]},
+  {k:"sat1",label:"Sat · Chill",extra:["Laundry on","Restock snacks","Plan next-day outing"]},
+  {k:"sun1",label:"Sun · Eden",extra:["Eden tickets booked","Layers (rainforest is warm!)","Picnic or lunch money"]},
   {k:"mon1",label:"Mon · Tintagel",extra:["Tickets booked","Back carrier (steep steps!)","Check tide for Merlin's Cave"]},
   {k:"tue1",label:"Tue · Chill",extra:["Start pre-packing","Fuel up the car","Empty the fridge"]},
   {k:"wed2",label:"Wed · Move",extra:["Check out of Bude","Bins out / tidy up","Cheddar check-in details","Supermarket shop"]},
@@ -618,12 +648,47 @@ function resetGroup(prefix){
 renderDaily();
 
 /* ---------- CAR GAMES ---------- */
-const ideas=["I Spy with colours 🎨","Who can spot a cow first? 🐄","Make animal noises 🐮","Count the bridges we go under 🌉","Eye-spy a red car 🚗","Sing a nursery rhyme together 🎵","Spot a tractor 🚜","Story time — make one up together 📖","Quiet game — who can be silent longest? 🤫","Find something that begins with B 🅱️","Wave at a lorry driver 👋","Cloud shapes — what can you see? ☁️"];
+const ideas=["I Spy with colours 🎨","Who can spot a cow first? 🐄","Make animal noises 🐮","Count the bridges we go under 🌉","Eye-spy a red car 🚗","Sing a nursery rhyme together 🎵","Spot a tractor 🚜","Story time — make one up together 📖","Quiet game — who can be silent longest? 🤫","Find something that begins with B 🅱️","Wave at a lorry driver 👋","Cloud shapes — what can you see? ☁️","Copy the clap — echo the rhythm 👏","Colour hunt — spot 5 blue things 🔵","Guess the animal from 3 clues 🐘","Magic word — shout it at every caravan! 🌭","Wiggle break — shake like a jellyfish 🪼","Count the sheep fields 🐑"];
 function randomGame(){
   const out=document.getElementById('gameOut');
   out.textContent=ideas[Math.floor(Math.random()*ideas.length)];
   out.style.animation='none'; void out.offsetWidth; out.style.animation='fade .4s';
 }
+
+/* game machines — parent reads these out loud */
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const wyr=[
+  "have a tail like a monkey 🐒 or wings like a bird 🐦",
+  "eat jelly for breakfast 🍮 or ice cream for dinner 🍦",
+  "be as tiny as a mouse 🐭 or as big as a giant 🦣",
+  "live in a castle 🏰 or on a pirate ship 🏴‍☠️",
+  "have a pet dragon 🐉 or a pet unicorn 🦄",
+  "bounce like a kangaroo 🦘 or slither like a snake 🐍",
+  "have hair made of spaghetti 🍝 or a nose like an elephant 🐘",
+  "swim like a fish 🐟 or climb like a spider 🕷️",
+  "sleep in a bird's nest 🪺 or in a bat cave 🦇",
+  "drive a digger 🚜 or fly a rocket 🚀",
+  "have a puddle-jumping contest 💦 or a snowball fight ⛄",
+  "only ever whisper 🤫 or only ever SHOUT 📢"
+];
+const storyWho=["a sleepy dragon","a tiny pirate","a dancing cow","a cheeky seagull","a brave princess","a wobbly robot","a magic ice-cream van","a very hungry crab"];
+const storyWhere=["on the beach","in a sandcastle","up a big mountain","under the sea","on a big red bus","at the zoo","in a cosy cave","on a fishing boat"];
+const storyTwist=["who lost their shoe","who found a magic shell","who could only say 'moo'","who really wanted birthday cake","who was scared of puddles","who found a treasure map","whose tummy wouldn't stop rumbling","who couldn't stop giggling"];
+const wiggles=[
+  "Roar like a lion! 🦁","Wiggle your fingers like falling rain 🌧️","Puff your cheeks out like a blowfish 🐡",
+  "Stomp your feet quietly like a mouse… now BIG like an elephant! 🐘","Stretch up taaaall like a giraffe 🦒",
+  "Blink slowly like a sleepy owl 🦉","Make your silliest face 🤪","Pretend to munch a GIANT sandwich 🥪",
+  "Shake your hands like a wobbly jellyfish 🪼","Flap your arms like a seagull 🕊️",
+  "Pretend to row a boat — stroke, stroke, stroke! 🚣","Blow a big raspberry 😛"
+];
+function machineSay(t){
+  const out=document.getElementById('machineOut');
+  out.textContent=t;
+  out.style.animation='none'; void out.offsetWidth; out.style.animation='fade .4s';
+}
+function wouldYouRather(){machineSay("Would you rather… "+pick(wyr)+"?")}
+function storyStarter(){machineSay("Once upon a time there was "+pick(storyWho)+" "+pick(storyWhere)+" "+pick(storyTwist)+"… what happened next?")}
+function wiggleBreak(){machineSay(pick(wiggles))}
 
 /* ---------- SPARKLE ---------- */
 function sparkle(){
