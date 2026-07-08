@@ -157,6 +157,30 @@
   footer{text-align:center; padding:30px 16px; opacity:.6; font-size:.85rem}
   .emoji-rain{position:fixed; top:-40px; font-size:1.6rem; pointer-events:none; z-index:999; animation:fall linear forwards}
   @keyframes fall{to{transform:translateY(110vh) rotate(360deg); opacity:0}}
+  .print-btn{background:var(--coral); border:2px solid var(--coral); color:#fff; border-radius:20px; padding:5px 14px; font:inherit; font-size:.8rem; cursor:pointer; float:right; margin-right:8px}
+  .print-btn:hover{background:#e85555; border-color:#e85555}
+
+  /* ---------- PRINT: I SPY SHEET ONLY ---------- */
+  @media print{
+    header, nav, footer, #countdown, .wave, .sun-badge, .emoji-rain,
+    .reset-btn, .print-btn, .progress-wrap, #ispy .intro{display:none !important}
+    body{background:#fff !important; padding:0 !important; line-height:1.35}
+    main{max-width:none}
+    main .panel{display:none !important}
+    main #ispy{display:block !important; animation:none}
+    #ispy .card{box-shadow:none !important; border:2px solid #000; border-radius:12px; padding:14px 18px !important; margin:0 !important}
+    #ispy .section{color:#000; font-size:1.4rem; margin-bottom:10px}
+    #ispy .sub-h{color:#000; break-inside:avoid; border-bottom:1.5px solid #000; padding-bottom:2px}
+    #spyList .col2{columns:2; column-gap:28px}
+    .checkrow{break-inside:avoid; padding:4px 2px; cursor:default}
+    .checkrow:hover{background:transparent}
+    .checkrow input{-webkit-appearance:none; appearance:none; width:15px; height:15px; border:2px solid #000 !important; border-radius:3px; background:#fff !important}
+    .checkrow input:checked{background:#fff !important; border-color:#000 !important}
+    .checkrow input:checked::after{color:#000 !important; font-size:12px}
+    .checkrow input:checked + span{text-decoration:none; opacity:1}
+    .checkrow span{color:#000; opacity:1}
+    @page{margin:1.4cm}
+  }
 </style>
 </head>
 <body>
@@ -404,8 +428,8 @@
 
 <!-- ====================== I SPY ====================== -->
 <section class="panel" id="ispy">
-  <h2 class="section">👀 Travel I Spy <button class="reset-btn" onclick="resetGroup('spy')">↺ Reset all</button></h2>
-  <p style="margin-bottom:14px">Keep little eyes peeled out the window! Tick off each one you spot along the way. 🚗 Ticks are saved automatically. 💾</p>
+  <h2 class="section">👀 Travel I Spy <button class="reset-btn" onclick="resetGroup('spy')">↺ Reset all</button><button class="print-btn" onclick="window.print()">🖨️ Print</button></h2>
+  <p class="intro" style="margin-bottom:14px">Keep little eyes peeled out the window! Tick off each one you spot along the way. 🚗 Ticks are saved automatically — or hit <strong>🖨️ Print</strong> for a paper sheet to take in the car. 💾</p>
   <div class="card">
     <div class="progress-wrap"><div class="progress-bar" id="spyProg"></div></div>
     <div id="spyList"></div>
