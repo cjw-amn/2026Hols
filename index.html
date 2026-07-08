@@ -183,6 +183,7 @@
   <button class="tab-btn active" data-tab="itinerary">🗺️ Itinerary</button>
   <button class="tab-btn" data-tab="daily">✅ Daily Checklist</button>
   <button class="tab-btn" data-tab="packing">🎒 Packing</button>
+  <button class="tab-btn" data-tab="ispy">👀 I Spy</button>
   <button class="tab-btn" data-tab="stays">🏠 Where We Stay</button>
   <button class="tab-btn" data-tab="fun">🎲 Car Fun</button>
   <button class="tab-btn" data-tab="info">ℹ️ Handy Info</button>
@@ -401,6 +402,16 @@
   </div>
 </section>
 
+<!-- ====================== I SPY ====================== -->
+<section class="panel" id="ispy">
+  <h2 class="section">👀 Travel I Spy <button class="reset-btn" onclick="resetGroup('spy')">↺ Reset all</button></h2>
+  <p style="margin-bottom:14px">Keep little eyes peeled out the window! Tick off each one you spot along the way. 🚗 Ticks are saved automatically. 💾</p>
+  <div class="card">
+    <div class="progress-wrap"><div class="progress-bar" id="spyProg"></div></div>
+    <div id="spyList"></div>
+  </div>
+</section>
+
 <!-- ====================== STAYS ====================== -->
 <section class="panel" id="stays">
   <h2 class="section">🏠 Where We're Staying</h2>
@@ -580,6 +591,16 @@ const packing={
 };
 buildList('packList', packing, 'pack', 'packProg');
 
+/* ---------- I SPY ---------- */
+const ispy={
+  "🚗 On the road":["Motorway services 🅿️","A bridge over the road 🌉","A tractor 🚜","A caravan or motorhome 🚐","Roadworks & traffic cones 🚧","A red post box 📮","A petrol station ⛽","A lorry with a funny logo 🚚"],
+  "🐄 Animals":["Sheep in a field 🐑","Cows 🐄","A horse or pony 🐴","A seagull 🐦","A duck or swan 🦢","A dog on a walk 🐕","A bird of prey / big bird 🦅","A butterfly 🦋"],
+  "🌳 Countryside":["Rolling green hills 🌄","A dry stone wall 🧱","A wind turbine 💨","A river or stream 🏞️","A forest or woodland 🌲","A field of yellow flowers 🌼","A farm 🚜","Hay bales 🌾"],
+  "🏖️ Seaside":["A lighthouse 🗼","A sandy beach 🏖️","Rock pools 🦀","A boat or ship ⛵","An ice cream van 🍦","A pier or harbour ⚓","Seashells 🐚","A sandcastle 🏰"],
+  "🏘️ Towns & buildings":["A church steeple ⛪","A castle or ruin 🏰","A thatched cottage 🏡","A Union Jack flag 🇬🇧","A red phone box ☎️","A pub sign 🍺","A clock tower 🕰️","A double-decker bus 🚌"]
+};
+buildList('spyList', ispy, 'spy', 'spyProg');
+
 /* ---------- DAILY CHECKLIST ---------- */
 const dailyCommon=["Suncream on everyone ☀️","Hats & sunglasses","Water bottles filled","Snacks packed 🍎","Wipes & spare clothes","Phones charged","Buggy/carrier in car","Check today's weather & tides","Wallet, keys, tickets"];
 const days=[
@@ -653,6 +674,7 @@ function resetGroup(prefix){
   if(!confirm('Clear these ticks?'))return;
   Object.keys(localStorage).forEach(k=>{if(k.startsWith(prefix))localStorage.removeItem(k);});
   if(prefix==='pack'){document.getElementById('packList').innerHTML='';buildList('packList',packing,'pack','packProg');}
+  else if(prefix==='spy'){document.getElementById('spyList').innerHTML='';buildList('spyList',ispy,'spy','spyProg');}
   else renderDaily();
 }
 renderDaily();
