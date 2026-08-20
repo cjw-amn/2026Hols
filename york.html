@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🏖️ Our Cornwall & Somerset Adventure</title>
+<title>🚂 Our York & Moors Weekend</title>
 <style>
   :root{
-    --sun:#ffd23f; --coral:#ff6b6b; --sea:#1ec8c8; --deep:#0a7e8c;
-    --sky:#a8e6ff; --sand:#fff4d6; --grape:#7b5ea7; --leaf:#4caf6d;
-    --ink:#173a43; --paper:#fffdf7;
-    --shadow:0 8px 24px rgba(10,70,80,.15);
+    --sun:#ffd23f; --coral:#ff6b6b; --sea:#9b7bd1; --deep:#4a3d78;
+    --sky:#e9e1ff; --sand:#fff4d6; --grape:#7b5ea7; --leaf:#4caf6d;
+    --ink:#2d2440; --paper:#fffdf7;
+    --shadow:0 8px 24px rgba(60,45,110,.15);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -18,7 +18,7 @@
     color:var(--ink); background:var(--paper);
     background-image:
       radial-gradient(circle at 10% 0%, #fff7e0 0%, transparent 40%),
-      radial-gradient(circle at 90% 10%, #d6f7ff 0%, transparent 35%);
+      radial-gradient(circle at 90% 10%, #ece4ff 0%, transparent 35%);
     line-height:1.5; padding-bottom:60px;
   }
 
@@ -26,7 +26,7 @@
   header{
     position:relative; overflow:hidden; text-align:center;
     padding:46px 20px 70px;
-    background:linear-gradient(160deg,#1ec8c8 0%, #0a7e8c 60%, #086373 100%);
+    background:linear-gradient(160deg,#9b7bd1 0%, #5a4a8c 60%, #473a73 100%);
     color:#fff; border-bottom-left-radius:40px; border-bottom-right-radius:40px;
     box-shadow:var(--shadow);
   }
@@ -38,6 +38,8 @@
     padding:8px 18px; border-radius:30px; font-weight:bold; box-shadow:var(--shadow);
     font-size:.95rem;
   }
+  .other-trip{display:inline-block; margin-top:12px; margin-left:8px; color:#fff; font-size:.85rem; font-weight:bold; text-decoration:none; border:2px solid rgba(255,255,255,.6); padding:6px 14px; border-radius:30px}
+  .other-trip:hover{background:rgba(255,255,255,.15)}
   .floaty{position:absolute; font-size:2rem; animation:bob 4s ease-in-out infinite}
   @keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-12px) rotate(4deg)}}
 
@@ -78,14 +80,14 @@
     background:#fff; border-radius:20px; box-shadow:var(--shadow); margin-bottom:18px;
     overflow:hidden; border-left:8px solid var(--sea);
   }
-  .day-card.bude{border-left-color:var(--coral)}
   .day-card.travel{border-left-color:var(--grape)}
-  .day-card.somerset{border-left-color:var(--leaf)}
+  .day-card.moors{border-left-color:var(--leaf)}
+  .day-card.york{border-left-color:var(--coral)}
   .day-head{
     display:flex; align-items:center; gap:14px; padding:16px 18px; cursor:pointer;
     user-select:none;
   }
-  .day-head:hover{background:#fafdff}
+  .day-head:hover{background:#fbfaff}
   .day-emoji{font-size:1.8rem; flex-shrink:0}
   .day-date{font-size:.72rem; text-transform:uppercase; letter-spacing:1px; opacity:.6; font-weight:bold}
   .day-title{font-size:1.15rem; font-weight:bold}
@@ -93,7 +95,7 @@
   .chev{transition:transform .3s; opacity:.5; margin-left:8px}
   .day-card.open .chev{transform:rotate(90deg)}
   .day-body{max-height:0; overflow:hidden; transition:max-height .4s ease; padding:0 18px}
-  .day-card.open .day-body{max-height:1600px; padding-bottom:18px}
+  .day-card.open .day-body{max-height:2200px; padding-bottom:18px}
   .day-body p{margin-bottom:8px}
   .day-body ul{margin:6px 0 6px 22px}
   .day-body li{margin-bottom:4px}
@@ -101,13 +103,11 @@
   .kid-tip b{color:var(--coral)}
   .maplink{display:inline-block; margin-top:8px; font-size:.82rem; color:var(--deep); text-decoration:none; font-weight:bold; border:2px solid var(--sea); padding:5px 12px; border-radius:20px}
   .maplink:hover{background:var(--sea); color:#fff}
-  .tidelink{display:inline-block; margin-top:8px; margin-left:6px; font-size:.82rem; color:#0a5a8c; text-decoration:none; font-weight:bold; border:2px solid #2aa7e0; padding:5px 12px; border-radius:20px}
-  .tidelink:hover{background:#2aa7e0; color:#fff}
 
   /* ---------- CHECKLISTS ---------- */
   .card{background:#fff; border-radius:20px; box-shadow:var(--shadow); padding:20px; margin-bottom:20px}
   .checkrow{display:flex; align-items:center; gap:12px; padding:9px 6px; border-radius:10px; cursor:pointer; transition:background .15s}
-  .checkrow:hover{background:#f6fbfc}
+  .checkrow:hover{background:#f8f6fd}
   .checkrow input{appearance:none; width:24px; height:24px; border:2.5px solid var(--sea); border-radius:7px; cursor:pointer; flex-shrink:0; position:relative; transition:background .2s}
   .checkrow input:checked{background:var(--leaf); border-color:var(--leaf)}
   .checkrow input:checked::after{content:'✓'; color:#fff; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:14px}
@@ -115,7 +115,7 @@
   .checkrow input:checked + span{text-decoration:line-through; opacity:.5}
   .col2{columns:2; column-gap:24px}
   @media(max-width:640px){.col2{columns:1}}
-  .progress-wrap{background:#eef6f7; border-radius:30px; height:16px; overflow:hidden; margin:6px 0 16px}
+  .progress-wrap{background:#f0ecfa; border-radius:30px; height:16px; overflow:hidden; margin:6px 0 16px}
   .progress-bar{height:100%; width:0; background:linear-gradient(90deg,var(--sun),var(--leaf)); transition:width .4s; border-radius:30px}
   .sub-h{font-weight:bold; color:var(--deep); margin:14px 0 6px; font-size:1.05rem}
   .reset-btn{background:none; border:2px solid #ddd; color:#999; border-radius:20px; padding:5px 14px; font:inherit; font-size:.8rem; cursor:pointer; float:right}
@@ -132,8 +132,8 @@
   .info-card h3{font-size:1.05rem; margin-bottom:8px; display:flex; align-items:center; gap:8px}
   .info-card p, .info-card li{font-size:.9rem}
   .info-card ul{margin-left:18px; margin-top:4px}
-  .stay-card{border-top-color:var(--coral)}
-  .stay-card.som{border-top-color:var(--leaf)}
+  .stay-card{border-top-color:var(--grape)}
+  .stay-card.anne{border-top-color:var(--leaf)}
   .big-num{font-size:1.4rem; font-weight:bold; color:var(--deep)}
 
   /* games list */
@@ -162,7 +162,7 @@
 
   /* ---------- PRINT: ONE SECTION ONLY ---------- */
   @media print{
-    header, nav, footer, #countdown, .wave, .sun-badge, .emoji-rain,
+    header, nav, footer, #countdown, .wave, .sun-badge, .other-trip, .emoji-rain,
     .reset-btn, .print-btn, .progress-wrap, .day-pills, .panel .intro{display:none !important}
     body{background:#fff !important; padding:0 !important; line-height:1.35}
     main{max-width:none}
@@ -189,14 +189,14 @@
 <body>
 
 <header>
-  <span class="floaty" style="left:8%; top:30%">⛅</span>
-  <span class="floaty" style="right:10%; top:24%; animation-delay:1s">🐚</span>
-  <span class="floaty" style="left:18%; bottom:30%; animation-delay:2s">🌊</span>
-  <span class="floaty" style="right:20%; bottom:28%; animation-delay:1.5s">☀️</span>
-  <h1>Our Cornwall &amp; Somerset Adventure 🏖️</h1>
-  <p>Bude &bull; Eden Project &bull; Tintagel &bull; Cheddar Gorge</p>
-  <div class="sun-badge">👨‍👩‍👧‍👦 Family trip with a 3 &amp; 5 year old</div>
-  <br><a href="york.html" style="display:inline-block; margin-top:12px; color:#fff; font-size:.85rem; font-weight:bold; text-decoration:none; border:2px solid rgba(255,255,255,.6); padding:6px 14px; border-radius:30px">🚂 York &amp; Moors weekend page →</a>
+  <span class="floaty" style="left:8%; top:30%">🚂</span>
+  <span class="floaty" style="right:10%; top:24%; animation-delay:1s">🐑</span>
+  <span class="floaty" style="left:18%; bottom:30%; animation-delay:2s">🏰</span>
+  <span class="floaty" style="right:20%; bottom:28%; animation-delay:1.5s">⛅</span>
+  <h1>Our York &amp; Moors Weekend 🚂</h1>
+  <p>Railway Museum &bull; Goathland &bull; Clifford's Tower &bull; Family Sunday Lunch</p>
+  <div class="sun-badge">👨‍👩‍👧‍👦 Weekend away with a 3 &amp; 5 year old (+ Grandma!)</div>
+  <br><a class="other-trip" href="index.html">🏖️ Cornwall &amp; Somerset trip page →</a>
   <svg class="wave" viewBox="0 0 1440 50" preserveAspectRatio="none"><path fill="#fffdf7" d="M0,25 C240,55 480,5 720,25 C960,45 1200,5 1440,25 L1440,50 L0,50 Z"></path></svg>
 </header>
 
@@ -221,190 +221,105 @@
 
 <!-- ====================== ITINERARY ====================== -->
 <section class="panel active" id="itinerary">
-  <h2 class="section">🗺️ The Plan <span class="pill">9 nights</span></h2>
-  <p style="margin-bottom:16px">Tap any day to open it up. Plans are flexible — swap days around with the weather! 🌦️</p>
+  <h2 class="section">🗺️ The Plan <span class="pill">2 nights</span></h2>
+  <p style="margin-bottom:16px">Tap any day to open it up. A packed little weekend — trains, moors, castles and a proper Sunday lunch! 🍗</p>
 
-  <!-- WEEK 1 - BUDE -->
+  <!-- FRIDAY -->
   <div class="day-card travel open">
     <div class="day-head">
-      <span class="day-emoji">🚗</span>
-      <div><div class="day-date">Wednesday 15 July</div><div class="day-title">Travel Day → Bude</div></div>
-      <span class="day-tag">Big drive</span><span class="chev">▶</span>
+      <span class="day-emoji">🚂</span>
+      <div><div class="day-date">Friday 21 August</div><div class="day-title">Drive up → National Railway Museum → Caravan</div></div>
+      <span class="day-tag">Travel + trains</span><span class="chev">▶</span>
     </div>
     <div class="day-body">
-      <p><b>6:00am</b> — Leave home (LU7 3JN). Aim to beat the traffic! ☕</p>
-      <p><b>Halfway stop</b> (~10:30–12:30) — <b>Clarks Village outlet, Street</b>: shops, food and a leg-stretch. Park at Farm Rd, Street BA16 0BB. 🅿️</p>
-      <p><b>From 2:30pm</b> — Check in at <b>Bude Holiday Resort</b>, Maer Ln, Bude EX23 9EE. Unpack, snacks, gentle walk to find the sea. 🌊</p>
-      <div class="kid-tip"><b>Tip:</b> Pack a "car bag" within reach — snacks, water, wipes, a comfort toy and a few surprise activities for the 3 &amp; 5 yr old.</div>
-      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=Farm+Rd+Street+Somerset+BA16+0BB">🧭 Directions to Clarks Village (Farm Rd, BA16 0BB)</a>
-      <a class="maplink" target="_blank" href="https://content.landsec.com/media/0l2jj3kv/cv_centre-map_listings_130426_digi-1.pdf">🗺️ Clarks Village map &amp; store listings (PDF)</a>
-      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=Bude+Holiday+Resort+Maer+Ln+Bude+EX23+9EE">🧭 Directions to Bude Holiday Resort (EX23 9EE)</a>
-    </div>
-  </div>
-
-  <div class="day-card bude">
-    <div class="day-head">
-      <span class="day-emoji">🏖️</span>
-      <div><div class="day-date">Thursday 16 July</div><div class="day-title">Beach Day around Bude</div></div>
-      <span class="day-tag">Relax</span><span class="chev">▶</span>
-    </div>
-    <div class="day-body">
-      <p>Settle in and explore. <b>Summerleaze Beach</b> has the famous sea pool — calm and shallow, perfect for little ones.</p>
+      <p><b>~7:30am</b> — Leave home (LU7 3JN) with Grandma aboard. ~3¼ hrs to York plus a leg-stretch stop, so aim to arrive late morning. ☕</p>
+      <div class="sub-h">🚂 National Railway Museum (free!)</div>
       <ul>
-        <li>🏰 Sandcastles &amp; rockpooling at low tide</li>
-        <li>🍦 Ice cream on the front</li>
-        <li>🌳 <b>Crooklets</b> for more space, or the canal path for a buggy-friendly stroll</li>
-        <li>🛶 <b>Bude Canal</b> — hire a rowing boat or pedalo on the calm water (gentle &amp; great for the kids)</li>
-        <li>🚇 <b>The Bude Tunnel</b> — the legendary 70m covered walkway by Sainsbury's that went viral as a "tourist attraction"! A daft, free 2-minute giggle — strike a pose 📸</li>
+        <li>🕙 Open <b>10am–5pm</b> — entry is <b>free</b>, but <b>book free tickets online in advance</b> to skip the queue</li>
+        <li>🅿️ Museum car park is pay &amp; display — sat nav <b>YO26 4XJ</b></li>
+        <li>🚂 Giant locos in the Great Hall — Mallard is the fastest steam train EVER (a big hit with a 5 yr old!)</li>
+        <li>🔬 <b>Wonderlab</b> — brilliant hands-on science gallery for kids (small extra charge, worth a look)</li>
+        <li>🍴 Lunch at the museum café or picnic — there's plenty of space</li>
       </ul>
-      <div class="kid-tip"><b>Tide tip:</b> Check tide times — rockpools are best a couple of hours either side of low tide. And yes, the Bude Tunnel really is just a tunnel — that's the joke. 😄</div>
-      <a class="tidelink" target="_blank" href="https://www.tidetimes.org.uk/bude-tide-times">🌊 Bude tide times</a>
+      <div class="sub-h">👵 Drop Grandma at Aunty Anne's</div>
+      <p>Mid-afternoon: ~20 min drive to <b>5 The Avenue, Park Estate, Haxby, YO32 3EH</b>. Quick cuppa &amp; a wee stop for the kids!</p>
+      <div class="sub-h">🏕️ On to the caravan</div>
+      <p>Then ~35 min from Haxby to <b>Brickyard Lakes Country Park</b>, Amotherby Lane, Amotherby, Malton <b>YO17 6UP</b>. Check in, unpack, and explore the two lakes before tea. 🦆</p>
+      <div class="kid-tip"><b>Tip:</b> Pack the "car bag" within reach — snacks, water, wipes, comfort toys and a few surprise activities. The museum has buggy-friendly lifts everywhere.</div>
+      <a class="maplink" target="_blank" href="https://www.railwaymuseum.org.uk/visit">🎟️ Book free NRM tickets</a>
+      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=National+Railway+Museum+Car+Park+York+YO26+4XJ">🧭 Directions to the Railway Museum (YO26 4XJ)</a>
+      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=5+The+Avenue+Haxby+York+YO32+3EH">🧭 Directions to Aunty Anne's (YO32 3EH)</a>
+      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=Brickyard+Lakes+Country+Park+Amotherby+Lane+Malton+YO17+6UP">🧭 Directions to Brickyard Lakes (YO17 6UP)</a>
     </div>
   </div>
 
-  <div class="day-card bude">
+  <!-- SATURDAY -->
+  <div class="day-card moors">
     <div class="day-head">
-      <span class="day-emoji">⛵</span>
-      <div><div class="day-date">Friday 17 July</div><div class="day-title">Padstow &amp; RIB Sea Safari</div></div>
-      <span class="day-tag">Harbour day</span><span class="chev">▶</span>
+      <span class="day-emoji">🐑</span>
+      <div><div class="day-date">Saturday 22 August</div><div class="day-title">Hole of Horcum &amp; Goathland (with Aunty Anne &amp; Grandma)</div></div>
+      <span class="day-tag">Moors day</span><span class="chev">▶</span>
     </div>
     <div class="day-body">
-      <p>Pretty harbour town. Crabbing off the quayside is a huge hit with little ones! 🦀</p>
-      <div class="sub-h">⛵ Booked: Wavehunters RIB Sea Safari</div>
+      <p><b>Morning</b> — Aunty Anne &amp; Grandma drive up to the country park (~35 min from Haxby). Show them the caravan, coffee by the lakes, then off to the moors! 🚗</p>
+      <div class="sub-h">🕳️ Hole of Horcum (~35 min via Pickering)</div>
       <ul>
-        <li>🚤 <b>1-hour RIB sea safari</b> with <b>Wavehunters UK Ltd</b> — Friday 17th July, <b>2:45pm</b></li>
-        <li>📍 Meet at the <b>Wavehunters shop, Padstow</b> — aim to arrive ~15–20 min early to check in &amp; kit up</li>
-        <li>🦭 Eyes peeled for seals, dolphins &amp; seabirds!</li>
+        <li>🅿️ Park at <b>Saltergate car park</b> (pay &amp; display) — the massive viewpoint is <b>right next to the car park</b>, so it's perfect for Grandma and little legs alike</li>
+        <li>🧙 Tell the kids the legend: <b>Wade the Giant</b> scooped out the whole valley with his hand to throw mud at his wife! Can they see his finger marks?</li>
+        <li>🚶 A short flat stroll along the rim is plenty — no need to hike down into the bowl</li>
       </ul>
-      <div class="sub-h" style="margin-top:12px">🍟 Tea: Stein's Fish &amp; Chips takeaway</div>
+      <div class="sub-h">🐑 Goathland (~15 min further on)</div>
       <ul>
-        <li>🐟 Takeaway tea from <b>Stein's Fish &amp; Chips</b> (South Quay) after the boat trip</li>
-        <li>⏰ <b>Reminder: book the takeaway when they open</b> — fish &amp; chips service starts at <b>12pm</b> (pre-order online or via the Rick Stein app)</li>
+        <li>🐑 <b>Sheep wander free all over the village</b> — the kids will love spotting them on the green (look, don't chase — and watch for them on the road!)</li>
+        <li>🚗 <b>Aidensfield Garage</b> — vintage cars &amp; the old funeral van from Heartbeat, fun to peek at</li>
+        <li>🍦 Ice creams &amp; gift shops around the green, tearoom or pub lunch (the Goathland Hotel is the "Aidensfield Arms")</li>
+        <li>🧙‍♂️ Fun fact: Goathland station is <b>Hogsmeade</b> in the first Harry Potter film! We're not riding the steam railway — but a free 2-minute peek from the road bridge to wave if a train puffs in is optional magic 🚂</li>
+        <li>⛔ Skip Mallyan Spout waterfall this time — the path is steep &amp; slippery, a bit much for a 3 yr old</li>
       </ul>
-      <div class="sub-h" style="margin-top:12px">🐟 Around the harbour</div>
+      <div class="sub-h">🍟 Fish &amp; chip tea back at the park</div>
       <ul>
-        <li>🚴 The Camel Trail is flat &amp; great if you fancy a buggy/bike stroll</li>
-        <li>⛴️ <b>Black Tor Ferry</b> — tiny hop across to Rock beach &amp; back; a fun mini boat ride for pennies</li>
+        <li>Head back for ~4:30–5pm and do a chippy run into Malton (~8 min from the park):</li>
+        <li>🥇 <b>Peasey Hill Fish &amp; Chips</b>, Malton — top-rated locally, open Sat teatime ~4:30–8pm</li>
+        <li>🥈 <b>Stuarts of Driffield</b>, 56 Castlegate, Malton — open Sat 4–8pm, ☎ 01653 694037</li>
+        <li>🍴 Eat at the caravan by the lakes, then Aunty Anne (&amp; Grandma) head home to Haxby 👋</li>
       </ul>
-      <div class="kid-tip"><b>Tips:</b> RIBs are bouncy &amp; splashy — warm layers under the waterproofs, and do lunch <i>before</i> the 2:45pm trip. Grab a crabbing line &amp; bucket from a harbour shop — bacon = best bait!</div>
-      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=Wavehunters+Padstow">🧭 Directions to the Wavehunters shop, Padstow</a>
-      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=Link+Road+Car+Park+Padstow+PL28+8AX">🧭 Directions to Padstow (Link Road car park, PL28 8AX)</a>
-      <a class="tidelink" target="_blank" href="https://www.tidetimes.org.uk/padstow-tide-times">🌊 Padstow tide times</a>
+      <div class="kid-tip"><b>Tip:</b> The moors are always cooler &amp; windier than the vale — pack an extra layer each even in August. Coins/card for the two car parks. Bring the carrier for the 3 yr old at Hole of Horcum.</div>
+      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=Saltergate+Car+Park+Hole+of+Horcum">🧭 Directions to Hole of Horcum (Saltergate car park)</a>
+      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=Goathland+Village+Car+Park">🧭 Directions to Goathland</a>
+      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=Peasey+Hill+Fish+and+Chips+Malton">🧭 Directions to Peasey Hill Fish &amp; Chips</a>
+      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=56+Castlegate+Malton+YO17+7DP">🧭 Directions to Stuarts of Driffield (Castlegate)</a>
     </div>
   </div>
 
-  <div class="day-card bude">
-    <div class="day-head">
-      <span class="day-emoji">🏖️</span>
-      <div><div class="day-date">Saturday 18 July</div><div class="day-title">Beach &amp; Pool Day</div></div>
-      <span class="day-tag">Stay local</span><span class="chev">▶</span>
-    </div>
-    <div class="day-body">
-      <p>Kids will be up early, so crack on — morning on the local beach, then back for an afternoon in the pool. Restock snacks while they splash.</p>
-      <div class="kid-tip"><b>Tip:</b> Build in chill days like this — toddlers do <i>so</i> much better with a slower pace between big outings.</div>
-    </div>
-  </div>
-
-  <div class="day-card bude">
-    <div class="day-head">
-      <span class="day-emoji">🌿</span>
-      <div><div class="day-date">Sunday 19 July</div><div class="day-title">Eden Project</div></div>
-      <span class="day-tag">Big day out</span><span class="chev">▶</span>
-    </div>
-    <div class="day-body">
-      <p>~50 min drive. Giant biomes, jungle, play areas and lots to spot. A full day — go early!</p>
-      <ul>
-        <li>🌴 Rainforest Biome (warm — dress in layers you can peel off)</li>
-        <li>🛝 Outdoor play &amp; the "invisible worlds" zone</li>
-        <li>🎟️ Book tickets online in advance — they're cheaper &amp; valid all year</li>
-      </ul>
-      <div class="kid-tip"><b>Tip:</b> The 3 yr old may flag by mid-afternoon — bring the buggy/carrier. There's a land train if legs get tired.</div>
-      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=Eden+Project+PL24+2SG">🧭 Directions to Eden Project (PL24 2SG)</a>
-    </div>
-  </div>
-
-  <div class="day-card bude">
-    <div class="day-head">
-      <span class="day-emoji">🏊</span>
-      <div><div class="day-date">Monday 20 July</div><div class="day-title">Beach &amp; Pool Day</div></div>
-      <span class="day-tag">Stay local</span><span class="chev">▶</span>
-    </div>
-    <div class="day-body">
-      <p>Another local one after Eden — early start with the kids, beach in the morning, pool in the afternoon.</p>
-      <div class="kid-tip"><b>Tip:</b> A rest day here keeps little legs fresh for Tintagel's steep steps tomorrow.</div>
-    </div>
-  </div>
-
-  <div class="day-card bude">
+  <!-- SUNDAY -->
+  <div class="day-card york">
     <div class="day-head">
       <span class="day-emoji">🏰</span>
-      <div><div class="day-date">Tuesday 21 July</div><div class="day-title">Tintagel Castle</div></div>
-      <span class="day-tag">Legends!</span><span class="chev">▶</span>
-    </div>
-    <div class="day-body">
-      <p>~35 min drive. Clifftop castle ruins, the dramatic bridge, and King Arthur legends. ⚔️</p>
-      <ul>
-        <li>🕙 <b>Open 10am–5pm</b> — we're booked for the <b>10:00am entry</b> (booking ref 94PQC6JA)</li>
-        <li>🎟️ Tickets booked ✅ — show the PDF at the welcome desk</li>
-        <li>🌉 The footbridge is amazing but there are <b>lots of steep steps</b></li>
-        <li>🧚 Merlin's Cave on the beach at low tide (check tides!)</li>
-        <li>🐉 Spot the Gallos bronze statue &amp; the carved Merlin face</li>
-      </ul>
-      <div class="kid-tip"><b>Tip:</b> A back carrier beats a buggy here — the terrain is steep &amp; uneven. Hold little hands near edges. It's the last full Bude day, so start a bit of pre-packing tonight to keep the move to Somerset calm.</div>
-      <a class="maplink" target="_blank" href="tickets/tintagel-ticket.pdf">🎟️ Tintagel tickets (PDF — Tue 21 Jul, 10:00am entry)</a>
-      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=Tintagel+Visitor+Centre+Long+Stay+Car+Park+PL34+0AA">🧭 Directions to Tintagel (visitor centre car park, PL34 0AA)</a>
-      <a class="tidelink" target="_blank" href="https://www.tidetimes.org.uk/tintagel-tide-times">🌊 Tintagel tide times</a>
-    </div>
-  </div>
-
-  <!-- TRAVEL TO SOMERSET -->
-  <div class="day-card travel">
-    <div class="day-head">
-      <span class="day-emoji">🧳</span>
-      <div><div class="day-date">Wednesday 22 July</div><div class="day-title">Drive to Somerset (Cheddar)</div></div>
-      <span class="day-tag">Move day</span><span class="chev">▶</span>
-    </div>
-    <div class="day-body">
-      <p>~2 hr drive. Check out of Bude, head to Cheddar. Break the journey with a play stop or picnic.</p>
-      <ul>
-        <li>🦩 <b>Wild Place Project</b> or a country park near Bristol makes a great mid-stop</li>
-        <li>🛒 Supermarket shop on the way to restock the new place</li>
-      </ul>
-      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=51.321140,-2.723954">🧭 Directions to the Somerset stay</a>
-    </div>
-  </div>
-
-  <div class="day-card somerset">
-    <div class="day-head">
-      <span class="day-emoji">🧀</span>
-      <div><div class="day-date">Thursday 23 July</div><div class="day-title">Cheddar Gorge</div></div>
-      <span class="day-tag">Explore</span><span class="chev">▶</span>
-    </div>
-    <div class="day-body">
-      <p>Britain's biggest gorge — right on the doorstep! Towering cliffs and caves. 🦇</p>
-      <ul>
-        <li>🕳️ <b>Gough's Cave</b> — stroller-friendly-ish, magical for kids</li>
-        <li>🧀 Cheese &amp; fudge tasting in the village</li>
-        <li>🐐 Spot the wild goats on the cliffs</li>
-      </ul>
-      <div class="kid-tip"><b>Tip:</b> The clifftop walk &amp; Jacob's Ladder (274 steps!) are tough for tiny legs — the caves &amp; village are the easy win with this age group.</div>
-    </div>
-  </div>
-
-  <div class="day-card somerset">
-    <div class="day-head">
-      <span class="day-emoji">🏡</span>
-      <div><div class="day-date">Friday 24 July</div><div class="day-title">Day Trip → then Home</div></div>
+      <div><div class="day-date">Sunday 23 August</div><div class="day-title">Clifford's Tower → Sunday Lunch → Outlet → Home</div></div>
       <span class="day-tag">Last day</span><span class="chev">▶</span>
     </div>
     <div class="day-body">
-      <p>One more adventure before the drive home (~3 hrs to LU7 3JN):</p>
+      <p><b>~9:00am</b> — Pack the car &amp; check out of the caravan, then ~35 min into York.</p>
+      <div class="sub-h">🏰 Clifford's Tower — for opening at 10am</div>
       <ul>
-        <li>🐉 <b>Wookey Hole</b> — caves, fairy garden, dinosaurs &amp; play (kid heaven, nearby)</li>
-        <li>⛪ <b>Wells</b> — England's smallest city, swans &amp; cathedral</li>
-        <li>🦆 <b>Glastonbury</b> or a farm park if the weather's kind</li>
+        <li>🕙 Opens <b>10am</b> (English Heritage) — book tickets online; arriving at opening beats the crowds</li>
+        <li>🅿️ Castle car park is right next door on Tower Street</li>
+        <li>🪜 <b>55 steps up the grassy mound</b> — a fun charge for the 5 yr old, carrier for the 3 yr old; buggies stay at the bottom</li>
+        <li>👀 Roof deck with the best views in York — spot the Minster! Takes ~45 min–1 hr, perfect timing</li>
       </ul>
-      <div class="kid-tip"><b>Tip:</b> Set off home after an early lunch &amp; aim to drive through nap time — then a comfort stop halfway. 🚗💤</div>
+      <div class="sub-h">🍗 12:30pm — Sunday lunch at Aunty Anne's</div>
+      <p>~20 min drive up to Haxby (YO32 3EH). Yorkshire puddings in Yorkshire — as it should be! Don't forget something for the table 🍷🌼</p>
+      <div class="sub-h">🛍️ If there's time: York Designer Outlet</div>
+      <ul>
+        <li>📍 St Nicholas Avenue, Fulford <b>YO19 4TA</b> — south side of York, conveniently on the way home, free parking</li>
+        <li>⏰ Sunday trading: <b>the big stores close at 5pm</b> — aim to arrive by ~3:30 to make it worthwhile</li>
+        <li>🛝 There's an outdoor play area to burn off steam — tag-team the shopping!</li>
+      </ul>
+      <p><b>6:00pm</b> — Kids in PJs, hit the road at bedtime and let them sleep the ~3¼ hrs home (LU7 3JN). 🚗💤</p>
+      <div class="kid-tip"><b>Tip:</b> Do a final caravan sweep for teddies &amp; Tonies before check-out — and keep the PJs, toothbrushes and pillows out of the boot for the 6pm switcheroo.</div>
+      <a class="maplink" target="_blank" href="https://www.english-heritage.org.uk/visit/places/cliffords-tower-york/">🎟️ Book Clifford's Tower tickets</a>
+      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=Castle+Car+Park+Tower+Street+York">🧭 Directions to Clifford's Tower (Castle car park)</a>
+      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=York+Designer+Outlet+YO19+4TA">🧭 Directions to the Designer Outlet (YO19 4TA)</a>
       <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=LU7+3JN">🧭 Directions home (LU7 3JN)</a>
     </div>
   </div>
@@ -412,7 +327,7 @@
 
 <!-- ====================== DAILY CHECKLIST ====================== -->
 <section class="panel" id="daily">
-  <h2 class="section">✅ Daily Checklist <button class="reset-btn" onclick="resetGroup('daily')">↺ Reset day</button><button class="print-btn" onclick="printSection('daily')">🖨️ Print</button></h2>
+  <h2 class="section">✅ Daily Checklist <button class="reset-btn" onclick="resetGroup('ydaily')">↺ Reset day</button><button class="print-btn" onclick="printSection('daily')">🖨️ Print</button></h2>
   <p class="intro" style="margin-bottom:14px">A quick "have we got everything?" before heading out each day. Pick a day — ticks are saved automatically. 💾</p>
   <div class="day-pills" id="dayPills"></div>
   <div class="card">
@@ -423,7 +338,7 @@
 
 <!-- ====================== PACKING ====================== -->
 <section class="panel" id="packing">
-  <h2 class="section">🎒 Packing List <button class="reset-btn" onclick="resetGroup('pack')">↺ Reset all</button><button class="print-btn" onclick="printSection('packing')">🖨️ Print</button></h2>
+  <h2 class="section">🎒 Packing List <button class="reset-btn" onclick="resetGroup('ypack')">↺ Reset all</button><button class="print-btn" onclick="printSection('packing')">🖨️ Print</button></h2>
   <div class="card">
     <div class="progress-wrap"><div class="progress-bar" id="packProg"></div></div>
     <div id="packList"></div>
@@ -432,7 +347,7 @@
 
 <!-- ====================== I SPY ====================== -->
 <section class="panel" id="ispy">
-  <h2 class="section">👀 Travel I Spy <button class="reset-btn" onclick="resetGroup('spy')">↺ Reset all</button><button class="print-btn" onclick="printSection('ispy')">🖨️ Print</button></h2>
+  <h2 class="section">👀 Travel I Spy <button class="reset-btn" onclick="resetGroup('yspy')">↺ Reset all</button><button class="print-btn" onclick="printSection('ispy')">🖨️ Print</button></h2>
   <p class="intro" style="margin-bottom:14px">Keep little eyes peeled out the window! Tick off each one you spot along the way. 🚗 Ticks are saved automatically — or hit <strong>🖨️ Print</strong> for a paper sheet to take in the car. 💾</p>
   <div class="card">
     <div class="progress-wrap"><div class="progress-bar" id="spyProg"></div></div>
@@ -445,32 +360,34 @@
   <h2 class="section">🏠 Where We're Staying</h2>
   <div class="grid">
     <div class="info-card stay-card">
-      <h3>🌊 Bude, Cornwall</h3>
-      <p><b>Nights 1–7</b> (Wed 15 → Wed 22 July)</p>
-      <p>Check-in from <span class="big-num">2:30pm</span></p>
+      <h3>🏕️ Brickyard Lakes Country Park</h3>
+      <p><b>Nights 1–2</b> (Fri 21 → Sun 23 August)</p>
+      <p>Caravan booked <span class="big-num">🚐</span></p>
       <ul>
-        <li>📍 <b>Bude Holiday Resort</b>, Maer Ln, Bude EX23 9EE</li>
-        <li>Surfy seaside town with sandy beaches &amp; a sea pool</li>
-        <li>Great base for Eden, Tintagel, Padstow</li>
-        <li>📝 Add door code &amp; host number here</li>
+        <li>📍 Amotherby Lane, Amotherby, Malton <b>YO17 6UP</b></li>
+        <li>☎ Park office: 01653 694488</li>
+        <li>Two lakes on site — duck spotting &amp; lakeside strolls 🦆</li>
+        <li>~8 min from Malton, gateway to the Moors</li>
+        <li>📝 Add van number, check-in/out times &amp; key info here</li>
       </ul>
-      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=Bude+Holiday+Resort+Maer+Ln+Bude+EX23+9EE">🧭 Directions to the stay</a>
+      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=Brickyard+Lakes+Country+Park+Amotherby+Lane+Malton+YO17+6UP">🧭 Directions to the park</a>
     </div>
-    <div class="info-card stay-card som">
-      <h3>🧀 Cheddar, Somerset</h3>
-      <p><b>Nights 8–9</b> (Wed 22 → Fri 24 July)</p>
-      <p>~2 hrs from Bude</p>
+    <div class="info-card stay-card anne">
+      <h3>👵 Aunty Anne's (Grandma's base)</h3>
+      <p><b>Grandma stays here</b> Fri &amp; Sat night</p>
+      <p>Sunday lunch <span class="big-num">12:30pm</span></p>
       <ul>
-        <li>Famous gorge, caves &amp; cheese on the doorstep</li>
-        <li>Handy for Wookey Hole &amp; Wells on the way home</li>
-        <li>📝 Add address, door code &amp; host number here</li>
+        <li>📍 5 The Avenue, Park Estate, Haxby, York <b>YO32 3EH</b></li>
+        <li>Fri: drop Grandma off after the Railway Museum</li>
+        <li>Sat: Anne &amp; Grandma join us for the moors day</li>
+        <li>Sun: the full family Sunday lunch! 🍗</li>
       </ul>
-      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=51.321140,-2.723954">🧭 Directions to the stay</a>
+      <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=5+The+Avenue+Haxby+York+YO32+3EH">🧭 Directions to Aunty Anne's</a>
     </div>
   </div>
   <div class="card" style="margin-top:18px">
     <div class="sub-h">📋 Booking notes</div>
-    <p style="font-size:.9rem">Keep your confirmation emails, parking info and check-out times handy. Double-check whether cots/high chairs are provided so you know what to bring for the 3 yr old.</p>
+    <p style="font-size:.9rem">Keep the caravan confirmation email handy and check whether bedding &amp; towels are provided or bring-your-own. Check if a travel cot / high chair is available for the 3 yr old, and note the check-out time for Sunday morning.</p>
   </div>
 </section>
 
@@ -515,58 +432,60 @@
   <h2 class="section">ℹ️ Handy Info</h2>
   <div class="grid">
     <div class="info-card">
+      <h3>🍟 Fish &amp; chips near the park</h3>
+      <ul>
+        <li>🥇 <b>Peasey Hill Fish &amp; Chips</b>, Malton — top-rated locally, Sat teatime ~4:30–8pm</li>
+        <li>🥈 <b>Stuarts of Driffield</b>, 56 Castlegate, Malton — Sat 4–8pm, ☎ 01653 694037</li>
+        <li>Both ~8 min drive from the caravan</li>
+        <li>📝 Worth ringing ahead with a big family order!</li>
+      </ul>
+    </div>
+    <div class="info-card">
       <h3>📞 Emergency</h3>
       <ul>
         <li>Emergency: <b>999</b></li>
         <li>Non-urgent NHS: <b>111</b></li>
-        <li>📝 Nearest A&amp;E: North Devon (Barnstaple) for Bude</li>
-        <li>📝 Add GP / insurance details</li>
+        <li>Nearest A&amp;E: <b>York Hospital</b>, Wigginton Road</li>
+        <li>Minor injuries: Malton Community Hospital</li>
       </ul>
     </div>
     <div class="info-card">
       <h3>🚗 Driving</h3>
       <ul>
-        <li>Total trip driving ~10–11 hrs over the week</li>
-        <li>Plan a stop every ~2 hrs with the kids</li>
-        <li>Keep a full water bottle &amp; sick bag in the car 🤢</li>
-        <li>Check fuel before remote Cornish roads</li>
-        <li>🅿️ <a href="https://www.cornwall.gov.uk/media/k3qk4nza/justpark-wallet-tcs.pdf" target="_blank" style="color:var(--deep); font-weight:bold">Cornwall car parks that take the JustPark wallet (PDF)</a> — pay by app, no scrabbling for coins</li>
-      </ul>
-    </div>
-    <div class="info-card">
-      <h3>🌦️ Weather plan</h3>
-      <ul>
-        <li>Cornwall is changeable — pack for 4 seasons</li>
-        <li>Rainy day picks: Eden, caves, soft play, aquariums</li>
-        <li>Sunny: beaches, gorge, harbours</li>
-        <li>Suncream + hats <i>and</i> waterproofs!</li>
-      </ul>
-    </div>
-    <div class="info-card">
-      <h3>🦀 Beach safety</h3>
-      <ul>
-        <li>Swim only at lifeguarded beaches, between the flags 🏴</li>
-        <li>Check tide times daily (cut-off risk in coves)</li>
-        <li>Bude Sea Pool is the calmest spot for little ones</li>
-        <li>Wristbands with your phone number for the kids</li>
+        <li>Home → York: ~3¼ hrs (stop halfway)</li>
+        <li>Railway Museum → Haxby: ~20 min</li>
+        <li>Haxby → Brickyard Lakes: ~35 min</li>
+        <li>Park → Goathland (via Hole of Horcum): ~50 min</li>
+        <li>Park → Clifford's Tower: ~35 min</li>
+        <li>Outlet → home: ~3¼ hrs</li>
       </ul>
     </div>
     <div class="info-card">
       <h3>🎟️ Book ahead</h3>
       <ul>
-        <li>Eden Project tickets (cheaper online)</li>
-        <li>Tintagel Castle (English Heritage)</li>
-        <li>Any Padstow boat trip</li>
-        <li>Cheddar Gorge &amp; Caves / Wookey Hole</li>
+        <li>NRM — free, but book timed entry tickets</li>
+        <li>NRM Wonderlab (optional, small charge)</li>
+        <li>Clifford's Tower (English Heritage)</li>
+        <li>Nothing needed for Goathland — just parking change!</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h3>🌦️ Weather plan</h3>
+      <ul>
+        <li>The moors are cooler &amp; windier — layers even in August</li>
+        <li>Wet Saturday backup: <b>Castle Howard</b> adventure playground is ~15 min from the park 🏰</li>
+        <li>Railway Museum &amp; Clifford's Tower work in any weather</li>
+        <li>Waterproofs <i>and</i> suncream — it's Yorkshire!</li>
       </ul>
     </div>
     <div class="info-card">
       <h3>💷 Budget jar</h3>
       <ul>
-        <li>Attraction tickets ×4 days out</li>
-        <li>Fuel (~500+ miles total)</li>
-        <li>Ice creams, crabbing lines, treats 🍦</li>
-        <li>Parking (coastal car parks add up!)</li>
+        <li>Clifford's Tower tickets (NRM is free!)</li>
+        <li>Fuel (~400 miles total)</li>
+        <li>Parking: NRM, Saltergate, Goathland, York</li>
+        <li>Fish &amp; chips ×6, ice creams, treats 🍦</li>
+        <li>Something for Aunty Anne's table 🍷</li>
       </ul>
     </div>
   </div>
@@ -574,7 +493,7 @@
 
 </main>
 
-<footer>Made with ☀️ &amp; 🌊 for an unforgettable family adventure · Have the best time! 💛</footer>
+<footer>Made with 🚂 &amp; 🐑 for a grand Yorkshire weekend · Have the best time! 💛</footer>
 
 <script>
 /* ---------- TABS ---------- */
@@ -601,8 +520,8 @@ document.querySelectorAll('.day-head').forEach(h=>{
 });
 
 /* ---------- COUNTDOWN ---------- */
-/* Trip start: next Wednesday 6am. Editable: set your real departure here. */
-const TRIP = new Date('2026-07-15T06:00:00');
+/* Trip start: Friday 21 August, ~7:30am departure. Edit if leaving earlier/later. */
+const TRIP = new Date('2026-08-21T07:30:00');
 function tick(){
   const now=new Date(), d=TRIP-now;
   if(d<=0){document.getElementById('cd-days').textContent='🎉';return;}
@@ -616,45 +535,34 @@ function tick(){
 }
 tick(); setInterval(tick,30000);
 
-/* ---------- PACKING LIST ---------- */
+/* ---------- PACKING LIST (weekend caravan edition) ---------- */
 const packing={
-  "👕 Clothes":["Outfits ×2 per day (kids get messy!)","Warm layers & jumpers","Waterproof coats ×4","Sun hats & wellies","PJs & spare socks","Swim stuff & rash vests","Sea shoes / water shoes","Beach towels","Phoebe & Skye — PJs & socks","Phoebe & Skye — pink dress","Phoebe & Skye — smiley face t-shirt","Zac — pants & Park Run top"],
-  "🧴 Kids essentials":["Wipes (still always handy!)","Sun cream (high factor)","Calpol & any meds","Comfort toys / blankies","Tonies & Toniebox"],
-  "🧸 Toys & activities":["Craft bits & colouring","Garden / outdoor toys","Water paints & brushes"],
-  "🏖️ Beach kit":["Bucket & spade set","Crabbing lines & net","Crab bucket","Rock pool kit","Beach windbreak","Sun umbrella","Real umbrella (just in case!)","Picnic blanket","Cool bag","Lunch boxes / cupware","Cling film","Mallet","Beach cart / trolley","Wetsuits if you have them"],
-  "🚗 Car & travel":["Phone chargers / cables","Sat nav or maps","Snacks & water bottles","Sick bags & wipes","Sunshades for windows","Activity bags & tablets","Car toys","First aid kit"],
-  "🔧 Handy extras":["Padlock","Clothes pegs","Portable fan / air con","Knicker hanger"],
-  "📄 Documents":["Accommodation bookings","Attraction tickets","Insurance details","Bank cards & some cash","Emergency contacts list"],
-  "🧼 Toiletries & meds":["Suncream","Moisturiser","Hayfever tablets & spray"],
-  "⛺ Beach & days out":["Beach tent","Swim toys for the hot tub","Picnic set","Going-out backpack","Pack-a-backpack"],
-  "🍳 Kitchen cupboard":["Salt","Vinegar","Herbs","Garlic granules","Champagne flutes 🥂","Hot choc kits"],
-  "🏠 For the cottage":["Toilet rolls","Blue roll","Cleaning spray","Washing powder","Fi's high chair","Blackout blinds","Extension lead","Night light"]
+  "👕 Clothes":["Outfits ×3 per kid + spares (they get messy!)","Warm layers & jumpers (moors are chilly)","Waterproof coats ×4","Wellies & sun hats","PJs & spare socks","Comfy shoes for the 55 tower steps"],
+  "🧴 Kids essentials":["Wipes (still always handy!)","Sun cream (high factor)","Calpol & any meds","Comfort toys / blankies","Tonies & Toniebox","Night light"],
+  "🧸 Toys & activities":["Sticker books & colouring","Car toys & activity bags","Ball / outdoor toys for the park","Tablets charged for the drive"],
+  "🚗 Car & travel":["Phone chargers / cables","Snacks & water bottles","Sick bags & wipes","Sunshades for windows","First aid kit","Buggy & back carrier"],
+  "📄 Documents":["Caravan booking confirmation","NRM free entry tickets","Clifford's Tower tickets","Bank cards & cash for parking + chippy","Emergency contacts list"],
+  "🏕️ For the caravan":["Bedding & towels (check if provided!)","Toilet rolls","Tea, coffee, milk & breakfast bits","Travel high chair (if needed)","Blackout blind","Hot choc kits"],
+  "👵 Grandma & Sunday lunch":["Grandma's bags (easy to grab at Haxby!)","Wine / flowers / chocs for Aunty Anne 🍷","PJs & pillows handy for the 6pm drive home"]
 };
-buildList('packList', packing, 'pack', 'packProg');
+buildList('packList', packing, 'ypack', 'packProg');
 
 /* ---------- I SPY ---------- */
 const ispy={
   "🚗 Out the window":["A big lorry 🚚","A bus 🚌","A tractor 🚜","A digger 🏗️","A bridge 🌉","Orange cones 🚧","A motorbike 🏍️","A car like ours 🚗"],
   "🐄 Animals":["A cow 🐄","A sheep 🐑","A horse 🐴","A duck 🦆","A doggy 🐕","A little bird 🐦","A butterfly 🦋","A cat 🐈"],
-  "🌳 Green places":["A big tree 🌳","A pretty flower 🌸","A green hill 🌄","A river or stream 🏞️","A farm 🚜","A muddy puddle 💧","The sun ☀️","A rainbow 🌈"],
-  "🏖️ At the seaside":["The big blue sea 🌊","A sandy beach 🏖️","A boat ⛵","A seagull 🕊️","An ice cream van 🍦","A bucket & spade 🪣","A sandcastle 🏰","A shell 🐚"],
-  "🏘️ In the town":["A red door 🚪","A flag 🚩","A red phone box ☎️","A church ⛪","A shop 🏬","A playground slide 🛝","A big clock 🕐","A postbox 📮"]
+  "🚂 On the moors":["Purple heather 💜","A sheep ON the road! 🐑","A steam train puffing smoke 🚂","A dry stone wall 🧱","A really big hill ⛰️","Walkers with backpacks 🎒","A stream or waterfall 🏞️","A grouse or a pheasant 🦃"],
+  "🏰 In York":["The city walls 🧱","A tower on a grassy hill 🏰","A boat on the river 🚤","A red phone box ☎️","York Minster's big towers ⛪","A train 🚆","A postbox 📮","A street performer 🎭"],
+  "🌳 Green places":["A big tree 🌳","A pretty flower 🌸","A green hill 🌄","A river or stream 🏞️","A farm 🚜","A muddy puddle 💧","The sun ☀️","A rainbow 🌈"]
 };
-buildList('spyList', ispy, 'spy', 'spyProg');
+buildList('spyList', ispy, 'yspy', 'spyProg');
 
 /* ---------- DAILY CHECKLIST ---------- */
-const dailyCommon=["Suncream on everyone ☀️","Hats & sunglasses","Water bottles filled","Snacks packed 🍎","Wipes & spare clothes","Phones charged","Buggy/carrier in car","Check today's weather & tides","Wallet, keys, tickets"];
+const dailyCommon=["Suncream on everyone ☀️","Hats & an extra layer","Water bottles filled","Snacks packed 🍎","Wipes & spare clothes","Phones charged","Buggy/carrier in car","Check today's weather","Wallet, keys, tickets"];
 const days=[
-  {k:"wed1",label:"Wed · Travel",extra:["Car loaded the night before","Breakfast/coffee for 6am off 🚗","Halfway stop: Clarks Village — park Farm Rd BA16 0BB","Check-in details to hand (2:30pm)"]},
-  {k:"thu1",label:"Thu · Beach",extra:["Beach kit & towels","Bucket, spade & crabbing line","Windbreak"]},
-  {k:"fri1",label:"Fri · Padstow",extra:["12pm ⏰ Book Stein's takeaway for tea (app/online — opens midday)","RIB sea safari 2:45pm — Wavehunters shop, arrive ~2:25pm","Booking confirmation to hand","Warm layers for the boat","Crabbing line & bucket"]},
-  {k:"sat1",label:"Sat · Beach & Pool",extra:["Beach kit & towels","Swim stuff for the pool","Swim toys for hot tub/pool","Restock snacks"]},
-  {k:"sun1",label:"Sun · Eden",extra:["Eden tickets booked","Layers (rainforest is warm!)","Picnic or lunch money"]},
-  {k:"mon1",label:"Mon · Beach & Pool",extra:["Beach kit & towels","Swim stuff for the pool","Fuel up the car","Check tomorrow's Tintagel tickets & tides"]},
-  {k:"tue1",label:"Tue · Tintagel",extra:["10am entry — leave Bude by ~9:15am","Ticket PDF ready (ref 94PQC6JA)","Back carrier (steep steps!)","Check tide for Merlin's Cave","Start pre-packing tonight","Empty the fridge"]},
-  {k:"wed2",label:"Wed · Move",extra:["Check out of Bude","Bins out / tidy up","Cheddar check-in details","Supermarket shop"]},
-  {k:"thu2",label:"Thu · Cheddar",extra:["Cave tickets","Comfy shoes","Cash for cheese & fudge 🧀"]},
-  {k:"fri2",label:"Fri · Home",extra:["Check out & pack car","Day-trip tickets","Drive home through nap time 💤","Final sweep for toys!"]}
+  {k:"fri",label:"Fri · NRM & arrive",extra:["Car loaded the night before","Grandma's bags in (easy to grab at Haxby)","NRM free tickets booked & on phone","Museum car park: YO26 4XJ","Aunty Anne's in the sat nav (YO32 3EH)","Brickyard Lakes check-in details to hand"]},
+  {k:"sat",label:"Sat · Moors day",extra:["Text Anne & Grandma a park arrival time","Coins/card for Saltergate & Goathland parking","Back carrier for the 3 yr old","Extra warm layer each (moors wind!)","Plan the chippy run (~4:30pm, Malton)","Camera for sheep & giant-spotting 📸"]},
+  {k:"sun",label:"Sun · York & home",extra:["Pack car & caravan sweep for teddies!","Check out — leave by ~9am","Clifford's Tower tickets ready","Gift for Aunty Anne in the car 🍷","PJs, pillows & toothbrushes kept out of the boot","Big stores at the outlet shut 5pm — arrive by 3:30","Leave for home at 6pm 💤"]}
 ];
 let curDay=days[0].k;
 const pills=document.getElementById('dayPills');
@@ -671,7 +579,7 @@ function renderDaily(){
   const list=document.getElementById('dailyList');
   list.innerHTML='';
   items.forEach((txt,i)=>{
-    const id='daily_'+curDay+'_'+i;
+    const id='ydaily_'+curDay+'_'+i;
     list.appendChild(makeRow(id,txt,'dailyProg'));
   });
   updateProg('dailyList','dailyProg');
@@ -714,8 +622,8 @@ function updateProg(containerId,progId){
 function resetGroup(prefix){
   if(!confirm('Clear these ticks?'))return;
   Object.keys(localStorage).forEach(k=>{if(k.startsWith(prefix))localStorage.removeItem(k);});
-  if(prefix==='pack'){document.getElementById('packList').innerHTML='';buildList('packList',packing,'pack','packProg');}
-  else if(prefix==='spy'){document.getElementById('spyList').innerHTML='';buildList('spyList',ispy,'spy','spyProg');}
+  if(prefix==='ypack'){document.getElementById('packList').innerHTML='';buildList('packList',packing,'ypack','packProg');}
+  else if(prefix==='yspy'){document.getElementById('spyList').innerHTML='';buildList('spyList',ispy,'yspy','spyProg');}
   else renderDaily();
 }
 renderDaily();
