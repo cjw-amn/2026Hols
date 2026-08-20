@@ -95,7 +95,7 @@
   .chev{transition:transform .3s; opacity:.5; margin-left:8px}
   .day-card.open .chev{transform:rotate(90deg)}
   .day-body{max-height:0; overflow:hidden; transition:max-height .4s ease; padding:0 18px}
-  .day-card.open .day-body{max-height:2200px; padding-bottom:18px}
+  .day-card.open .day-body{max-height:3000px; padding-bottom:18px}
   .day-body p{margin-bottom:8px}
   .day-body ul{margin:6px 0 6px 22px}
   .day-body li{margin-bottom:4px}
@@ -274,7 +274,14 @@
         <li>🚗 <b>Aidensfield Garage</b> — vintage cars &amp; the old funeral van from Heartbeat, fun to peek at</li>
         <li>🍦 Ice creams &amp; gift shops around the green, tearoom or pub lunch (the Goathland Hotel is the "Aidensfield Arms")</li>
         <li>🧙‍♂️ Fun fact: Goathland station is <b>Hogsmeade</b> in the first Harry Potter film! We're not riding the steam railway — but a free 2-minute peek from the road bridge to wave if a train puffs in is optional magic 🚂</li>
-        <li>⛔ Skip Mallyan Spout waterfall this time — the path is steep &amp; slippery, a bit much for a 3 yr old</li>
+      </ul>
+      <div class="sub-h">💦 Mallyan Spout waterfall walk</div>
+      <ul>
+        <li>🥾 Start beside <b>St Mary's Church</b> at the west end of the green (opposite the Mallyan Spout Hotel) — follow the signed path down to West Beck, then turn <b>left</b> along the stream to the falls</li>
+        <li>💦 At <b>70ft it's the tallest waterfall in the North York Moors</b> — about a mile there &amp; back, allow ~1 hr at kid pace</li>
+        <li>🪨 The last stretch is a mini boulder-scramble beside the beck — the kids will LOVE it; grippy shoes on and hold hands over the slippy rocks</li>
+        <li>🦖 A troll-or-dinosaur hunt on the way down keeps little legs moving — and the climb back up earns everyone an ice cream on the green 🍦</li>
+        <li>👵 Grandma can skip the scramble and have a cuppa at the <b>Mallyan Spout Hotel</b> right by the start of the path</li>
       </ul>
       <div class="sub-h">🍟 Fish &amp; chip tea back at the park</div>
       <ul>
@@ -283,7 +290,7 @@
         <li>🥈 <b>Stuarts of Driffield</b>, 56 Castlegate, Malton — open Sat 4–8pm, ☎ 01653 694037</li>
         <li>🍴 Eat at the caravan by the lakes, then Aunty Anne (&amp; Grandma) head home to Haxby 👋</li>
       </ul>
-      <div class="kid-tip"><b>Tip:</b> The moors are always cooler &amp; windier than the vale — pack an extra layer each even in August. Coins/card for the two car parks. Bring the carrier for the 3 yr old at Hole of Horcum.</div>
+      <div class="kid-tip"><b>Tip:</b> The moors are always cooler &amp; windier than the vale — pack an extra layer each even in August. Coins/card for the two car parks. Grippy shoes &amp; <b>spare socks for everyone</b> — someone WILL dunk a foot at the waterfall! 💦 Bring the carrier as a backup for the climb back up.</div>
       <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=Saltergate+Car+Park+Hole+of+Horcum">🧭 Directions to Hole of Horcum (Saltergate car park)</a>
       <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=Goathland+Village+Car+Park">🧭 Directions to Goathland</a>
       <a class="maplink" target="_blank" href="https://www.google.com/maps/dir/?api=1&amp;destination=Peasey+Hill+Fish+and+Chips+Malton">🧭 Directions to Peasey Hill Fish &amp; Chips</a>
@@ -561,7 +568,7 @@ buildList('spyList', ispy, 'yspy', 'spyProg');
 const dailyCommon=["Suncream on everyone ☀️","Hats & an extra layer","Water bottles filled","Snacks packed 🍎","Wipes & spare clothes","Phones charged","Buggy/carrier in car","Check today's weather","Wallet, keys, tickets"];
 const days=[
   {k:"fri",label:"Fri · NRM & arrive",extra:["Car loaded the night before","Grandma's bags in (easy to grab at Haxby)","NRM free tickets booked & on phone","Museum car park: YO26 4XJ","Aunty Anne's in the sat nav (YO32 3EH)","Brickyard Lakes check-in details to hand"]},
-  {k:"sat",label:"Sat · Moors day",extra:["Text Anne & Grandma a park arrival time","Coins/card for Saltergate & Goathland parking","Back carrier for the 3 yr old","Extra warm layer each (moors wind!)","Plan the chippy run (~4:30pm, Malton)","Camera for sheep & giant-spotting 📸"]},
+  {k:"sat",label:"Sat · Moors day",extra:["Text Anne & Grandma a park arrival time","Coins/card for Saltergate & Goathland parking","Grippy shoes & spare socks for the waterfall 💦","Back carrier as backup for the 3 yr old","Extra warm layer each (moors wind!)","Plan the chippy run (~4:30pm, Malton)","Camera for sheep, waterfall & giant-spotting 📸"]},
   {k:"sun",label:"Sun · York & home",extra:["Pack car & caravan sweep for teddies!","Check out — leave by ~9am","Clifford's Tower tickets ready","Gift for Aunty Anne in the car 🍷","PJs, pillows & toothbrushes kept out of the boot","Big stores at the outlet shut 5pm — arrive by 3:30","Leave for home at 6pm 💤"]}
 ];
 let curDay=days[0].k;
